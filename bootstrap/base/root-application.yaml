@@ -6,7 +6,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: default
+  project: workbench-saas
   source:
     repoURL: https://github.com/hansbeld/gitops-demo
     targetRevision: main
