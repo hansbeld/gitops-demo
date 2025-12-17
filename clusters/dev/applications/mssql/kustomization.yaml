@@ -1,17 +1,17 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: mssql
+namespace: keycloak
 
 resources:
-  - ../../../../components/applications/mssql
+  - ../../../../components/applications/keycloak
 
 # Dev-specific patches
-patches:
-  - patch: |-
-      - op: replace
-        path: /spec/resources/requests/storage
-        value: 5Gi
-    target:
-      kind: PersistentVolumeClaim
-      name: mssql-data
+# patches:
+#   - patch: |-
+#       - op: replace
+#         path: /spec/resources/requests/storage
+#         value: 5Gi
+#     target:
+#       kind: PersistentVolumeClaim
+#       name: mssql-data

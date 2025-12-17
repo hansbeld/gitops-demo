@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keycloak
+  namespace: keycloak
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: keycloak
+  template:
+    metadata:
+      labels:
+        app: keycloak
+    spec:
+      securityContext:
+        fsGroup: 10001
+      containers:
+      - name: keycloak
+        image: quay.io/keycloak/keycloak:26.3
+        ports:
+        - containerPort: 8024
+          name: keycloak
+        env:
+        - name: "KC_BOOTSTRAP_ADMIN_USERNAME"
+          value: "admin"
+        - name: "KC_BOOTSTRAP_ADMIN_PASSWORD"
+          value: "admin"
+        volumeMounts:
+        - name: mssql-data
+          mountPath: /var/opt/mssql
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu: "500m"
+          limits:
+            memory: "4Gi"
+            cpu: "2000m"
+      volumes:
+      - name: mssql-data
+        persistentVolumeClaim:
+          claimName: mssql-data

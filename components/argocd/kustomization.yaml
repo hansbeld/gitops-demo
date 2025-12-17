@@ -5,4 +5,5 @@ namespace: argocd
 
 resources:
   - mssql-application.yaml
+  - keycloak-application.yaml
 
