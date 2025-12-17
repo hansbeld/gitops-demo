@@ -13,7 +13,7 @@ spec:
     path: clusters/dev/applications/keycloak
   destination:
     server: https://kubernetes.default.svc
-    namespace: keycloak
+    namespace: workbench-saas
   syncPolicy:
     automated:
       prune: true
