@@ -49,10 +49,6 @@ spec:
           value: "true"
         - name: "KC_FEATURES"
           value: "organization"
-        - name: "JAVA_OPTS"
-          value: >-
-            -Djavax.net.ssl.trustStore=/opt/keycloak/certs/truststore.jks
-            -Djavax.net.ssl.trustStorePassword=changeit
         resources:
           requests:
             memory: "2Gi"
