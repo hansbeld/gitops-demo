@@ -26,9 +26,6 @@ spec:
           value: "admin"
         - name: "KC_BOOTSTRAP_ADMIN_PASSWORD"
           value: "admin"
-        volumeMounts:
-        - name: mssql-data
-          mountPath: /var/opt/mssql
         resources:
           requests:
             memory: "2Gi"
@@ -36,7 +33,3 @@ spec:
           limits:
             memory: "4Gi"
             cpu: "2000m"
-      volumes:
-      - name: mssql-data
-        persistentVolumeClaim:
-          claimName: mssql-data
