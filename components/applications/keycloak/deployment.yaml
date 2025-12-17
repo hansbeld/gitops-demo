@@ -26,6 +26,28 @@ spec:
           value: "admin"
         - name: "KC_BOOTSTRAP_ADMIN_PASSWORD"
           value: "admin"
+        - name: "KC_HOSTNAME"
+          value: "workbench.beinformed.test"
+        - name: "KC_HTTP_RELATIVE_PATH"
+          value: "/auth"
+        - name: KC_PROXY_HEADERS
+          value: "xforwarded"
+        - name: "KC_HTTP_ENABLED"
+          value: "true"
+        - name: "KC_HTTP_PORT"
+          value: "8024"
+        - name: "KC_HOSTNAME_BACKCHANNEL_DYNAMIC"
+          value: "false"
+        - name: "KC_HEALTH_ENABLED"
+          value: "true"
+        - name: "KC_METRICS_ENABLED"
+          value: "true"
+        - name: "KC_FEATURES"
+          value: "organization"
+        - name: "JAVA_OPTS"
+          value: >-
+            -Djavax.net.ssl.trustStore=/opt/keycloak/certs/truststore.jks
+            -Djavax.net.ssl.trustStorePassword=changeit
         resources:
           requests:
             memory: "2Gi"
