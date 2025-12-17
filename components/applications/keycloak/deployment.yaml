@@ -18,6 +18,11 @@ spec:
       containers:
       - name: keycloak
         image: quay.io/keycloak/keycloak:26.3
+        command:
+          - /opt/keycloak/bin/kc.sh
+          - start-dev
+          - --import-realm
+          - --features=scripts
         ports:
         - containerPort: 8024
           name: keycloak
